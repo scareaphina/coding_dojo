@@ -21,15 +21,22 @@ var tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", 
 
 var numType = ["", "hundred", "thousand", "million", "billion", "trillion"];
 
+// 3. create a variable to hold the value of the number sent
+
+var number = [];
+
 // 3. create a function to interate over the numWords array
+
+// var findNumber = base[base.length-1];
 
 function numberToWord(n) {
   if (n < 10) {
-    return(base (n-1));
+    return base[base.length-1];
   } else {
     return "Number is over 10.";
   }
-  console.log(numberToWord);
+
+  console.log(number);
 }
 
 
