@@ -24,9 +24,12 @@ var numType = ["", "hundred", "thousand", "million", "billion", "trillion"];
 // 3. create a function to interate over the numWords array
 
 function numberToWord(n) {
-  if (numWords.includes(n)) {
-    console.log 
+  if (n < 10) {
+    return(base (n-1));
+  } else {
+    return "Number is over 10.";
   }
+  console.log(numberToWord);
 }
 
 
