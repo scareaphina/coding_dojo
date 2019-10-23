@@ -13,34 +13,37 @@ what i need
 
 // 1. create an array for number words
 
-var base = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-var teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-var tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+function numberToWord (n) {
+
+var base = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+var tens = ["","", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 
 // 2. create an array for number modifiers
 
 var numType = ["", "hundred", "thousand", "million", "billion", "trillion"];
 
-// 3. create a variable to hold the value of the number sent
+// 3. create a variable to create a number string
 
-var number = [];
+var numString = num.toString();
 
-// 3. create a function to interate over the numWords array
+// 4. create if statements to deal with negative numbers and zero
 
-// var findNumber = base[base.length-1];
+if (n < 0) return("Error - Negative number.");
+if (n === 0) return("zero");
 
-function numberToWord(n) {
-  if (n < 10) {
-    return base[base.length-1];
-  } else {
-    return "Number is over 10.";
-  }
+// 5. create an if statement to deal with numbers under 20
 
-  console.log(number);
+
+// 6. create an if statement for numbers over 20 but under 100
+
+
+// 7. create an if statement for numbers of over 100
+
+
+// 6. create a function to replace numbers with the words in the array
+
+
+// 7. console log the results
+
+
 }
-
-
-// 4. create a function to replace numbers with the words in the array
-
-
-// 5. console log the results
