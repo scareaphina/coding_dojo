@@ -13,6 +13,7 @@ function numberToWord(n) {
 
   var base = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
   var tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+  var words = ["", "", "", "hundred", "thousand", "million", "billion", "trillion"];
 
   // 2. create a variable to create a number string
 
@@ -33,6 +34,13 @@ function numberToWord(n) {
     return tens[nString[0]] + " " + base[nString[1]];
   }
 
+// helper function for base Numbers
+// loop over to determine the length and give the correct wording
+
+// put tests around each function
+
+// helper for the other answers - numbers following numbers rather than zeros
+
   // 6. create an if statement for numbers of over 100
   if (nString.length == 3) {
     if (nString[1] === "0" && nString[2] === "0")
@@ -43,12 +51,10 @@ function numberToWord(n) {
 
   // 7. create an if statement for numbers of over 1000
   if (nString.length == 4) {
-    var end = +(nString[1] + nString[2] + nString[3]);
-
-    if (end === 0)
+    if (nString[1] === "0" && nString[2] === "0" && nString[3] === "0")
       return base[nString[0]] + " thousand";
-    if (end < 0)
-      return base[nString[0]] + " thousand, " + base[nString[1] + " hundred and " + tens[nString[2]] + " " + base[nString[3]]];
+    else
+      return base[nString[0]] + " thousand, " + base[nString[1]] + " hundred and " + tens[nString[2]] + " " + base[nString[3]];
   }
 
   // 8. create an if statement for numbers of over 1000000
@@ -57,3 +63,5 @@ function numberToWord(n) {
   // 9. console log the results
   console.log(n);
 }
+
+// BONUS: take the whole string, have a counter that counts down from total length to zero - try after i get this done once all the way through
