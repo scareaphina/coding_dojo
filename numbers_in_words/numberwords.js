@@ -73,14 +73,14 @@ function millions() {
 
 // 9. create a helper function for numbers followed by all zeros
 
-function zeros() {
-  if (nString[1] === "0" && nString[2] === "0")
+function zeros(n) {
+  if (nString.length === 3 && end === "0")
     return base[nString[0]] + " hundred";
-  else if (nString[1] === "0" && nString[2] === "0" && nString[3] === "0")
+  else if (nString.length === 4 && end === "0")
     return base[nString[0]] + " thousand";
-  else if (nString[1] === "0" && nString[2] === "0" && nString[3] === "0" && nString[4] === "0" && nString[5] === "0" && nString[6] === "0" && nString[7] === "0")
+  else if (nString.length === 7 && end === "0")
     return base[nString[0]] + " million";
-  else if (nString[1] === "0" && nString[2] === "0" && nString[3] === "0" && nString[4] === "0" && nString[5] === "0" && nString[6] === "0" && nString[7] === "0" && nString[8] === "0" && nString[9] === "0" && nString[10])
+  else if (nString.length === 9 && end === "0")
     return base[nString[0]] + " billion";
 }
 
