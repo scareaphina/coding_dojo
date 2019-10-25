@@ -8,7 +8,7 @@ one thousand, two hundred and thirty four
 */
 
 function numberToWord(n) {
-  
+
   // 1. create arrays for number words
 
   var base = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
@@ -51,10 +51,7 @@ function doubles(n) {
 
 function hundreds() {
   if (nString.length == 3) {
-    if (nString[1] === "0" && nString[2] === "0")
-      return base[nString[0]] + " hundred";
-    else
-      return base[nString[0]] + " hundred and " + tens[nString[1]] + base[nString[2]];
+    return base[nString[0]] + " hundred and " + tens[nString[1]] + base[nString[2]];
   }
 }
 
@@ -62,10 +59,7 @@ function hundreds() {
 
 function thousands() {
   if (nString.length == 4) {
-    if (nString[1] === "0" && nString[2] === "0" && nString[3] === "0")
-      return base[nString[0]] + " thousand";
-    else
-      return base[nString[0]] + " thousand, " + base[nString[1]] + " hundred and " + tens[nString[2]] + " " + base[nString[3]];
+    return base[nString[0]] + " thousand, " + base[nString[1]] + " hundred and " + tens[nString[2]] + " " + base[nString[3]];
   }
 }
 
@@ -73,17 +67,21 @@ function thousands() {
 
 function millions() {
   if (nString.length == 7) {
-    if (nString[1] === "0" && nString[2] === "0" && nString[3] === "0" && nString[4] === "0" && nString)
-      return base[nString[0]] + " thousand";
-    else
-      return base[nString[0]] + " thousand, " + base[nString[1]] + " hundred and " + tens[nString[2]] + " " + base[nString[3]];
+    return base[nString[0]] + " million, " + base[nString[1]] + " thousand, " + base[nString[2]] + " hundred and " + tens[nString[3]] + " " + base[nString[4]];
   }
 }
 
 // 9. create a helper function for numbers followed by all zeros
 
 function zeros() {
-  
+  if (nString[1] === "0" && nString[2] === "0")
+    return base[nString[0]] + " hundred";
+  else if (nString[1] === "0" && nString[2] === "0" && nString[3] === "0")
+    return base[nString[0]] + " thousand";
+  else if (nString[1] === "0" && nString[2] === "0" && nString[3] === "0" && nString[4] === "0" && nString[5] === "0" && nString[6] === "0" && nString[7] === "0")
+    return base[nString[0]] + " million";
+  else if (nString[1] === "0" && nString[2] === "0" && nString[3] === "0" && nString[4] === "0" && nString[5] === "0" && nString[6] === "0" && nString[7] === "0" && nString[8] === "0" && nString[9] === "0" && nString[10])
+    return base[nString[0]] + " billion";
 }
 
 // helper function for base Numbers
