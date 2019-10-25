@@ -7,18 +7,19 @@ numberToWord(1234);
 one thousand, two hundred and thirty four
 */
 
+// 1. create arrays for number words
+
+var base = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+var tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+var words = ["", "", "", "hundred", "thousand", "million", "billion", "trillion"];
+var end = (nString.substr(1));
+
 function numberToWord(n) {
-
-  // 1. create arrays for number words
-
-  var base = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-  var tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-  var words = ["", "", "", "hundred", "thousand", "million", "billion", "trillion"];
-
   // 2. create a variable to turn number into string
 
   var nString = n.toString();
 
+  
 }
 
 // 3. create helper functions to deal with negative numbers and zero
