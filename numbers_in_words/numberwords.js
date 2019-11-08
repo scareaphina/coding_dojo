@@ -35,3 +35,19 @@ function doubles(n) {
     return tens[Math.floor(n / 10)] + " " + tens[n % 10];
   }
 }
+
+function hundreds(n) {
+  if (n > 99) {
+    return base[Math.floor(n / 100)] + " hundred " + doubles(n % 100);
+  } else {
+    return doubles(n);
+  }
+}
+
+function thousands(n) {
+  if (n >= 1000) {
+    return hundreds(Math.floor(n / 1000)) + " thousand " + hundreds(n % 1000);
+  } else {
+    return hundreds(n);
+  }
+}
