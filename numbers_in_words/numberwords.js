@@ -27,3 +27,11 @@ function singles(n) {
     return tens[Math.floor(n / 10)] + " " + base[num % 10];
   }
 }
+
+function doubles(n) {
+  if (n < 10) return base[n];
+  else if (n >= 10 && n < 20) return teens[n - 10];
+  else {
+    return tens[Math.floor(n / 10)] + " " + tens[n % 10];
+  }
+}
