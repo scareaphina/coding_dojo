@@ -1,29 +1,37 @@
+function expect(actual, expected, msg) {
+  console.log(msg);
+  if (actual !== expected) {
+    console.error(" Expected " + expected + " but got " + actual);
+  }
+}
+setTimeout(() => window.location = window.location, 2000);
+
+//////////
+
 var output = [];
 var count = [1];
 
 function fooBarQix(value) {
+  var names = new Map([
+    ["3", "Foo"],
+    ["5", "Bar"],
+    ["7", "Qix"]
+  ]);
   var str = "";
+  names.forEach(function(name, factor) {
+    if (value % factor === 0) {
+      str += name;
+    }
+  });
 
-if (!value || typeof value !== "string") {
+  names.forEach(function(name, digit) {
+    if (value.includes(digit)) {
+      str += name;
+    }
+  });
+
+  if (!value || typeof value !== "string") {
     return "";
-  }
-  if (value % 3 === 0) {
-    str = names[0];
-  }
-  if (value.includes("3")) {
-    str += names[0];
-  }
-  if (value % 5 === 0) {
-    str = names[1];
-  }
-  if (value.includes("5")) {
-    str += names[1];
-  }
-  if (value % 7 === 0) {
-    str = names[2];
-  }
-  if (value.includes("7")) {
-    str += names[2];
   }
   if (!str) {
     return value;
@@ -48,3 +56,15 @@ expect(fooBarQix("7"), "QixQix", "7 is divisible by 7, and contains 7");
 expect(fooBarQix("10"), "Bar", "10 is divisible by 5");
 expect(fooBarQix("13"), "Foo", "13 contains 3");
 expect(fooBarQix("14"), "Qix", "14 is divisible by 7");
+expect(fooBarQix("15"), "FooBarBar", "15 is divisible by 3 and 5, and contains 5");
+expect(fooBarQix("17"), "QixQix", "17 contains 7");
+
+
+
+
+
+
+
+
+
+//
