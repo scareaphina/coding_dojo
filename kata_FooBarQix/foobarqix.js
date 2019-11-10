@@ -2,14 +2,20 @@ var output = [];
 var count = [1];
 
 function fooBarQix(value) {
+  var str = "";
+
   if (!value || typeof value !== "string") {
     return "";
+  } if (value % 3 === 0) {
+    str = "Foo";
   } if (value === "3") {
-    return "Foo" + "Foo";
+    str += "Foo";
   } if (value === "5") {
-    return "Bar" + "Bar";
+    str = "BarBar";
+  } if (!str) {
+    return value;
   }
-  return value;
+  return str;
 }
 
 
@@ -24,3 +30,4 @@ expect(fooBarQix(1), "", "Only strings should be accepted");
 expect(fooBarQix("2"), "2", "2 should give 2");
 expect(fooBarQix("3"), "FooFoo", "3 is divisible by 3, and contains 3");
 expect(fooBarQix("5"), "BarBar", "5 is divisible by 5, and contains 5");
+expect(fooBarQix("6"), "Foo", "6 is divisible by 3");
