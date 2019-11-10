@@ -4,16 +4,23 @@ var count = [1];
 function fooBarQix(value) {
   if (!value || typeof value !== "string") {
     return "";
-  } else if (value === "3") {
+  } if (value === "3") {
     return "Foo" + "Foo";
-  } else if (value === "5") {
+  } if (value === "5") {
     return "Bar" + "Bar";
   }
   return value;
 }
 
 
-console.log(assertEqual(fooBarQix("1"), ""));
-console.log(assertEqual(fooBarQix("3"), "FooFoo"));
-console.log(assertEqual(fooBarQix("2"), "2"));
-console.log(assertEqual(fooBarQix("5"), "BarBar"));
+
+
+
+
+expect(typeof fooBarQix, "function", "The fooBarQix function exists");
+expect(fooBarQix(), "", "No arguments should give us an empty string");
+expect(fooBarQix("1"), "1", "1 should give 1");
+expect(fooBarQix(1), "", "Only strings should be accepted");
+expect(fooBarQix("2"), "2", "2 should give 2");
+expect(fooBarQix("3"), "FooFoo", "3 is divisible by 3, and contains 3");
+expect(fooBarQix("5"), "BarBar", "5 is divisible by 5, and contains 5");
