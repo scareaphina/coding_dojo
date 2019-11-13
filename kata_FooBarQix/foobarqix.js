@@ -4,7 +4,7 @@ function expect(actual, expected, msg) {
     console.error(" Expected " + expected + " but got " + actual);
   }
 }
-setTimeout(() => window.location = window.location, 2000);
+// setTimeout(() => window.location = window.location, 2000);
 
 //////////
 
