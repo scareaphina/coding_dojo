@@ -15,19 +15,27 @@ function fooBarQix(value) {
   if (!value || typeof value !== "string") {
     return "";
   }
+
+  function hasFactorAsDigit(names, value) {
+    return value.split("").filter(function (digit) {
+      return names.has(digit);
+    }).length > 0;
+  }
+
   var names = new Map([
     ["3", "Foo"],
     ["5", "Bar"],
     ["7", "Qix"]
   ]);
-  var str = "";
-  names.forEach(function(name, factor) {
-    if (value % factor === 0) {
-      str += name;
-    }
-  });
 
-  var suffix = value.split("").forEach(function(digit) {
+  var str = Array.from(names.keys())
+  .filter(function (factor) {
+    return (value % factor === 0);
+  }).map(function (factor) {
+    return names.get(factor);
+  }).join("");
+
+  var suffix = value.split("").map(function (digit) {
     return names.get(digit) ||
       (digit === "0" ?
         "*" :
@@ -39,8 +47,6 @@ function fooBarQix(value) {
   }
   return str;
 }
-
-
 
 
 
