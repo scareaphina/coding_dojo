@@ -34,21 +34,16 @@ function namedDigits(names, value) {
 }
 
 function fooBarQix(value) {
-
   if (!value || typeof value !== "string") {
     return "";
   }
-
   var names = new Map([
     ["3", "Foo"],
     ["5", "Bar"],
     ["7", "Qix"]
   ]);
-
   var str = namedFactors(names, value);
-
   var suffix = namedDigits(names, value);
-
   if (!str && !(suffix.replace("*", ""))) {
     return value.replace("0", "*");
   }
