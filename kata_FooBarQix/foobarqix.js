@@ -11,15 +11,32 @@ setTimeout(() => window.location = window.location, 2000);
 var output = [];
 var count = [1];
 
+function namedFactors(names, value) {
+  return Array.from(names.keys())
+    .filter((factor) => (value % factor === 0))
+    .map((factor) => names.get(factor))
+    .join("");
+}
+
+function hasFactorAsDigit(names, value) {
+  return value.split("").filter(function(digit) {
+    return names.has(digit);
+  }).length > 0;
+}
+
+function namedDigits(names, value) {
+  return value.split("").map(function(digit) {
+      return names.get(digit) ||
+        (digit === "0"
+        ? "*"
+        : "");
+  }).join("");
+}
+
 function fooBarQix(value) {
+
   if (!value || typeof value !== "string") {
     return "";
-  }
-
-  function hasFactorAsDigit(names, value) {
-    return value.split("").filter(function (digit) {
-      return names.has(digit);
-    }).length > 0;
   }
 
   var names = new Map([
@@ -28,24 +45,14 @@ function fooBarQix(value) {
     ["7", "Qix"]
   ]);
 
-  var str = Array.from(names.keys())
-  .filter(function (factor) {
-    return (value % factor === 0);
-  }).map(function (factor) {
-    return names.get(factor);
-  }).join("");
+  var str = namedFactors(names, value);
 
-  var suffix = value.split("").map(function (digit) {
-    return names.get(digit) ||
-      (digit === "0" ?
-        "*" :
-        "");
-  }).join("");
+  var suffix = namedDigits(names, value);
 
   if (!str && !(suffix.replace("*", ""))) {
     return value.replace("0", "*");
   }
-  return str;
+  return str + suffix;
 }
 
 
@@ -64,7 +71,7 @@ expect(fooBarQix("10"), "Bar*", "10 is divisible by 5 and the zero converts to *
 expect(fooBarQix("13"), "Foo", "13 contains 3");
 expect(fooBarQix("14"), "Qix", "14 is divisible by 7");
 expect(fooBarQix("15"), "FooBarBar", "15 is divisible by 3 and 5, and contains 5");
-expect(fooBarQix("17"), "QixQix", "17 contains 7");
+expect(fooBarQix("17"), "Qix", "17 contains 7");
 expect(fooBarQix("21"), "FooQix", "21 is divisible by 3 and 7");
 expect(fooBarQix("33"), "FooFooFoo", "33 is divisible by 3 and contains two 3s");
 expect(fooBarQix("51"), "FooBar", "51 is divisible by 3 and contains 5");
