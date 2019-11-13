@@ -26,16 +26,15 @@ function fooBarQix(value) {
       str += name;
     }
   });
-  value.split("").forEach(function(digit) {
-    if (names.get(digit)) {
-      str += names.get(digit);
-    }
-    if (digit === "0") {
-      str += "*";
-    }
-  });
 
-  if (!str) {
+  var suffix = value.split("").forEach(function(digit) {
+    return names.get(digit) ||
+      (digit === "0" ?
+        "*" :
+        "");
+  }).join("");
+
+  if (!str && !(suffix.replace("*", ""))) {
     return value.replace("0", "*");
   }
   return str;
