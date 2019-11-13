@@ -58,7 +58,7 @@ expect(fooBarQix("13"), "Foo", "13 contains 3");
 expect(fooBarQix("14"), "Qix", "14 is divisible by 7");
 expect(fooBarQix("15"), "FooBarBar", "15 is divisible by 3 and 5, and contains 5");
 expect(fooBarQix("17"), "QixQix", "17 contains 7");
-
+expect(fooBarQix("21"), "FooQix", "21 is divisible by 3 and 7");
 
 
 
