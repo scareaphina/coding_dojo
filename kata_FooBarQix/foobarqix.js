@@ -78,6 +78,7 @@ expect(fooBarQix("51"), "FooBar", "51 is divisible by 3 and contains 5");
 expect(fooBarQix("53"), "BarFoo", "51 contains 5 and 3");
 expect(fooBarQix("101"), "1*1", "101 contains a 0 which converts to *");
 expect(fooBarQix("303"), "FooFoo*Foo", "303 is divisible by 3, contains two 3s and the 0 converts to *");
+expect(fooBarQix("10101"), "FooQix**", "10101 is divisible by 3 and 7, and the 0s convert to *s");
 
 
 
