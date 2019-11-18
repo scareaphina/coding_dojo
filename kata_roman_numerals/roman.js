@@ -81,13 +81,37 @@ function transNumeral(n) {
   return transNumerIter(n, "");
 }
 
-function transNumerIter(n) {
+function transNumerIter(n, numeral) {
   if (n == 1) {
-    return("I");
+    return(numeral + "I");
   } if (n > 1 && n < 5) {
-    return transNumerIter(n - 1);
+    return transNumerIter(n - 1, numeral + "I");
+  } if (n == 5) {
+    return(numeral + "V");
+  } if (n > 5 && n < 10) {
+    return transNumerIter(n - 5, numeral + "V");
   }
 }
 
 assertEqual('I', transNumeral(1));
 assertEqual('II', transNumeral(2));
+assertEqual('III', transNumeral(3));
+assertEqual('IIII', transNumeral(4));
+assertEqual('V', transNumeral(5));
+assertEqual('VI', transNumeral(6));
+assertEqual('VII', transNumeral(7));
+assertEqual('VIII', transNumeral(8));
+assertEqual('VIIII', transNumeral(9));
+assertEqual('X', transNumeral(10));
+assertEqual('XII', transNumeral(12));
+assertEqual('XV', transNumeral(15));
+assertEqual('XVI', transNumeral(16));
+assertEqual('XX', transNumeral(20));
+// assertEqual('L', transNumeral(50));
+// assertEqual('LX', transNumeral(60));
+// assertEqual('C', transNumeral(100));
+// assertEqual('CXXI', transNumeral(121));
+//assertEqual('D', transNumeral(500))
+//assertEqual('M', transNumeral(1000))
+//assertEqual('MM', transNumeral(2000))
+//assertEqual('MMM', transNumeral(3000))
