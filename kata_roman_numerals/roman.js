@@ -84,6 +84,8 @@ function transNumeral(n) {
 function transNumerIter(n) {
   if (n == 1) {
     return("I");
+  } if (n > 1 && n < 5) {
+    return transNumerIter(n - 1);
   }
 }
 
