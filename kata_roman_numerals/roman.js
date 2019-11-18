@@ -65,3 +65,27 @@ assertEqual('CXXI', transNumeral(121))
 //assertEqual('M', transNumeral(1000))
 //assertEqual('MM', transNumeral(2000))
 //assertEqual('MMM', transNumeral(3000)) 
+
+
+////////////////////
+
+// second attempt
+
+setTimeout(() => window.location = window.location, 2000);
+
+function roman(n) {
+  return "The Roman numeral for " + n + " is " + transNumeral + " .";
+}
+
+function transNumeral(n) {
+  return transNumerIter(n, "");
+}
+
+function transNumerIter(n) {
+  if (n == 1) {
+    return("I");
+  }
+}
+
+assertEqual('I', transNumeral(1));
+assertEqual('II', transNumeral(2));
