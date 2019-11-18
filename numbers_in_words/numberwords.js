@@ -81,3 +81,5 @@ expect(numbertoWord("15"), "fifteen", "15 should give fifteen.");
 expect(numbertoWord("20"), "twenty", "20 should give twenty.");
 expect(numbertoWord("100"), "one hundred", "100 should give one hundred.");
 expect(numbertoWord("101"), "one hundred one", "101 should give one hundred one.");
+expect(numbertoWord("113"), "one hundred thirteen", "113 should give one hundred thirteen");
+expect(numbertoWord("1000"), "one thousand", "1000 should give one thousand");
