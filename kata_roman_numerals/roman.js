@@ -71,8 +71,6 @@ assertEqual('CXXI', transNumeral(121))
 
 // second attempt
 
-setTimeout(() => window.location = window.location, 2000);
-
 function roman(n) {
   return "The Roman numeral for " + n + " is " + transNumeral + " .";
 }
@@ -116,16 +114,17 @@ function transNumerIter(n, numeral) {
 assertEqual('I', transNumeral(1));
 assertEqual('II', transNumeral(2));
 assertEqual('III', transNumeral(3));
-assertEqual('IIII', transNumeral(4));
+assertEqual('IV', transNumeral(4));
 assertEqual('V', transNumeral(5));
 assertEqual('VI', transNumeral(6));
 assertEqual('VII', transNumeral(7));
 assertEqual('VIII', transNumeral(8));
-assertEqual('VIIII', transNumeral(9));
+assertEqual('IX', transNumeral(9));
 assertEqual('X', transNumeral(10));
 assertEqual('XII', transNumeral(12));
 assertEqual('XV', transNumeral(15));
 assertEqual('XVI', transNumeral(16));
+assertEqual('XIX', transNumeral(19));
 assertEqual('XX', transNumeral(20));
 assertEqual('L', transNumeral(50));
 assertEqual('LX', transNumeral(60));
