@@ -1,3 +1,6 @@
+setTimeout(() => window.location = window.location, 2000);
+
+
 /*
 DESIRED RESULT
 numberToWord(321);
@@ -12,7 +15,8 @@ var teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixt
 var tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 
 function numbertoWord(n) {
-  if (n === 0) return ("zero");
+  if (n === "") return ("Error - Invalid input.");
+  else if (n === 0) return ("zero");
   else if (n < 0) return ("Error - Negative number.");
   else return millions(n);
 }
@@ -56,3 +60,24 @@ function singles(n) {
     return tens[Math.floor(n / 10)] + " " + base[num % 10];
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+expect(typeof numbertoWord, "function", "The function numbertoWord exists.");
+expect(numbertoWord(""), "Error - Invalid input.", "No arguments should give us an error.");
+expect(numbertoWord("1"), "one", "1 should give one.");
+expect(numbertoWord("10"), "ten", "10 should give ten.");
+expect(numbertoWord("15"), "fifteen", "15 should give fifteen.");
+expect(numbertoWord("20"), "twenty", "20 should give twenty.");
+expect(numbertoWord("100"), "one hundred", "100 should give one hundred.");
+expect(numbertoWord("101"), "one hundred one", "101 should give one hundred one.");
