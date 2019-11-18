@@ -108,6 +108,8 @@ function transNumerIter(n, numeral) {
     return transNumerIter(n - 500, numeral + "D");
   } if (n == 1000) {
     return (numeral + "M");
+  } if (n > 1000) {
+    return transNumerIter(n - 1000, numeral + "M");
   }
 }
 
