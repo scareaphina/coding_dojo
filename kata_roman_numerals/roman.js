@@ -71,8 +71,10 @@ assertEqual('CXXI', transNumeral(121))
 
 // second attempt
 
+setTimeout(() => window.location = window.location, 2000);
+
 function roman(n) {
-  return "The Roman numeral for " + n + " is " + transNumeral + " .";
+  return "The Roman numeral for " + n + " is " + transNumeral(n) + " .";
 }
 
 function transNumeral(n) {
@@ -84,11 +86,15 @@ function transNumerIter(n, numeral) {
     return (numeral + "I");
   } if (n > 1 && n < 5) {
     return transNumerIter(n - 1, numeral + "I");
+  }  if (n == 4) {
+    return (numeral + "IV");
   } if (n == 5) {
     return (numeral + "V");
   } if (n > 5 && n < 10) {
     return transNumerIter(n - 5, numeral + "V");
-  } if (n == 10) {
+  } if (n == 9) {
+    return (numeral + "IX");
+  }  if (n == 10) {
     return (numeral + "X");
   } if (n > 10 && n < 50) {
     return transNumerIter(n - 10, numeral + "X");
