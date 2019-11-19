@@ -1,50 +1,32 @@
-
-var addToResults = function (text) {
-    var div = document.getElementById('results');
-
-    div.innerHTML = div.innerHTML + '<br />' + text;
-    console.log(text);
-};
-
-var assertEqual = function (x, y) {
-    if (x === y) {
-        addToResults("True!");
-    } else {
-        addToResults("Test Failed! " + x + " was not equal to: " + y);
-    }
-};
-
-//////////////////////////////////
-
 // 1. define total book cost
 
-bookCost = 8
+bookCost = 8;
 
 // 2. define types of books
 
-books = ['book1', 'book2', 'book3', 'book4', 'book5']
+books = ['book1', 'book2', 'book3', 'book4', 'book5'];
 
 // 3. find difference between various books
 
-var findDifference = function (bookSent) {
-
-    if (bookSent !== )
-
-};
+// var findDifference = function (bookSent) {
+//
+//     if (bookSent !== )
+//
+// };
 
 // 4. determine the appropriate discount to apply to various combos of books
 
 var amount = function (num) {
     if (num === 2) {
-        return Math.round((bookCost * 2) * .05)
+        return Math.round((bookCost * 2) * 0.05);
     } else if (num === 3) {
-        return Math.round((bookcost * 3) * .10)
+        return Math.round((bookcost * 3) * 0.10);
     } else if (num === 4) {
-        return Math.round((bookcost * 4) * .20)
+        return Math.round((bookcost * 4) * 0.20);
     } else if (num === 5) {
-        return Math.round((bookcost * 5) * .25)
+        return Math.round((bookcost * 5) * 0.25);
     } else {
-        return Math.round(bookcost * num)
+        return Math.round(bookcost * num);
     }
 };
 
