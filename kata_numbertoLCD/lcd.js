@@ -1,14 +1,12 @@
-function createFunction() {
+function insertRow() {
 
-  var table = document.getElementById("myTable");
+  var table = document.getElementById("myTable").insertRow(0);
 
-  var row = table.insertRow(0);
+  var cell1 = table.insertCell(0);
+  var cell2 = table.insertCell(1);
 
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-
-  cell1.innerHtml = "New Cell 1";
-  cell2.innerHtml = "New Cell 2";
+  cell1.innerHTML = "New Cell 1";
+  cell2.innerHTML = "New Cell 2";
 
 }
 
