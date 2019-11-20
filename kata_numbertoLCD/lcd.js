@@ -1,4 +1,4 @@
-function createTable() {
+function createFunction() {
 
   var table = document.getElementById("myTable");
 
@@ -10,4 +10,8 @@ function createTable() {
   cell1.innerHtml = "New Cell 1";
   cell2.innerHtml = "New Cell 2";
 
+}
+
+function deleteFunction() {
+  document.getElementById("myTable").deleteRow(0);
 }
