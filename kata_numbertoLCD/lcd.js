@@ -21,5 +21,5 @@ function generateNumber() {
 }
 
 function deleteFunction() {
-  document.getElementById("myTable").deleteRow(3);
+  document.getElementById("myTable").deleteRow();
 }
