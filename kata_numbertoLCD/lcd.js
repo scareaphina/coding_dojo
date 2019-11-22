@@ -1,90 +1,66 @@
-function generateRow() {
+function toLCD(n) {
 
-  var table = document.getElementById("myTable").insertRow(0);
+  var num = n.toString();
 
-  var cell1 = table.insertCell(0);
-  var cell2 = table.insertCell(1);
-  var cell3 = table.insertCell(2);
+  var chapeau = "";
+  var mid = "";
+  var bottom = "";
+  var feet = "";
 
-  cell1.innerHTML = "";
-  cell2.innerHTML = "";
-  cell3.innerHTML = "";
+  for (var i = 0; i < num.length; i++) {
 
-}
+    var int = parseInt(num[i], 10);
 
-function generateNumber() {
-  var count;
+    chapeau = chapeau + digits[int][0];
+    mid = mid + digits[int][1];
+    bottom = bottom + digits[int][2];
+    feet = feet + digits[int][3];
 
-  for (count = 0; count < 3; count++) {
-    generateRow();
   }
+
+  return [chapeau, mid, bottom, feet];
 }
 
-function deleteFunction() {
-  document.getElementById("myTable").deleteRow();
-}
+describe('lcd project', function() {
 
-///////
+  it('single digits', function() {
+    unitjs.value(digits[0]).is(toLCD(0));
+    unitjs.value(digits[8]).is(toLCD(8));
+  });
 
-var digits = {},
-_0 =
-' _ ' +
-'| |' +
-'|_|'
-'   ',
-_1 =
-'   ' +
-'  |' +
-'  |' +
-'   ',
-_2 =
-' _ ' +
-' _|' +
-'|_ ' +
-'   ',
-_3 =
-' _ ' +
-' _|' +
-' _|' +
-'   ',
-_4 =
-'   ' +
-'|_|' +
-'  |' +
-'   ',
-_5 =
-' _ ' +
-'|_ ' +
-' _|' +
-'   ',
-_6 =
-' _ ' +
-'|_ ' +
-'|_|' +
-'   ',
-_7 =
-' _ ' +
-'  |' +
-'  |' +
-'   ',
-_8 =
-' _ ' +
-'|_|' +
-'|_|' +
-'   ',
-_9 =
-' _ ' +
-'|_|' +
-' _|' +
-'   ';
+  it('multiple digits', function() {
+    var expected =
+          [' _  _ ',
+           '|_|| |',
+           '|_||_|',
+           '      '];
 
-digits[_0] = '0';
-digits[_1] = '1';
-digits[_2] = '2';
-digits[_3] = '3';
-digits[_4] = '4';
-digits[_5] = '5';
-digits[_6] = '6';
-digits[_7] = '7';
-digits[_8] = '8';
-digits[_9] = '9';
+    unitjs.value(expected).is(toLCD(80));
+
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///// end
