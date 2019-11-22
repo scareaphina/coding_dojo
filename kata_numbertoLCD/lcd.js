@@ -59,7 +59,7 @@ function toLCD(n) {
 
     head = head + digits[int][0];
     shoulders = shoulders + digits[int][1];
-    knees = shoulders + digits[int][2];
+    knees = knees + digits[int][2];
     toes = toes + digits[int][3];
 
   }
@@ -84,13 +84,13 @@ describe('lcd project', function() {
 
   it('multiple digits', function() {
     var expected =
-          [' _  _ ',
-           '|_|| |',
-           '|_||_|',
-           '      '];
+     [' _  _ ',
+      '|_|| |',
+      '|_||_|',
+      '      '
+    ];
 
     unitjs.value(expected).is(toLCD(80));
 
   });
 });
-
