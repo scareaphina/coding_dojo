@@ -1,24 +1,24 @@
 function toLCD(n) {
 
   var num = n.toString();
-
-  var chapeau = "";
-  var mid = "";
-  var bottom = "";
-  var feet = "";
+  
+  var tete = "";
+  var epaules = "";
+  var genoux = "";
+  var pieds = "";
 
   for (var i = 0; i < num.length; i++) {
 
     var int = parseInt(num[i], 10);
 
-    chapeau = chapeau + digits[int][0];
-    mid = mid + digits[int][1];
-    bottom = bottom + digits[int][2];
-    feet = feet + digits[int][3];
+    tete = tete + digits[int][0];
+    epaules = epaules + digits[int][1];
+    genoux = genoux + digits[int][2];
+    pieds = pieds + digits[int][3];
 
   }
 
-  return [chapeau, mid, bottom, feet];
+  return [tete, epaules, genoux, pieds];
 }
 
 describe('lcd project', function() {
