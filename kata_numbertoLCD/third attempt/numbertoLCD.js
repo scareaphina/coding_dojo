@@ -17,3 +17,20 @@ function toLCD(n) {
 
   return [head, shoulders, knees, toes];
 }
+
+describe('lcd project', function() {
+  it('single digits', function() {
+    unitjs.value(digits[0]).is(toLCD(0));
+    unitjs.value(digits[8]).is(toLCD(8));
+  });
+
+  it('multiple digits', function() {
+    var expected =
+    [' _  _ ',
+     '|_|| |',
+     '|_||_|',
+     '      '];
+
+     unitjs.value(expected).is(toLCD(80));
+  });
+});
