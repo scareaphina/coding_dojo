@@ -19,5 +19,11 @@ test('spaces removed - second word is correct', function(assert) {
   assert.deepEqual(result[1], expected);
 });
 
+test('alphabetize puts word in alphabetical order', function(assert) {
+  var result = alphabetize ('yes');
+  var expected = 'esy';
+  assert.deepEqual(result[1], expected);
+});
+
 /* istanbul ignore next */
 if (typeof module !== 'undefined' && module.exports) { QUnit.load(); } // run the tests
