@@ -18,9 +18,13 @@ function parseWords(words) {
 }
 
 function alphabetize(word) {
-  if (word.indexOf(words))
+  potentialAna = word.indexOf(words);
 
-    word = word.split('');
+  if (!word) {
+    return;
+  }
+
+  word = word.split('');
   word = word.sort();
   word = word.join('');
   return word;
