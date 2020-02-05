@@ -22,7 +22,7 @@ test('spaces removed - second word is correct', function(assert) {
 test('alphabetize puts word in alphabetical order', function(assert) {
   var result = alphabetize ('yes');
   var expected = 'esy';
-  assert.deepEqual(result[1], expected);
+  assert.deepEqual(result, expected);
 });
 
 /* istanbul ignore next */
