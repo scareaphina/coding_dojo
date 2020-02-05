@@ -18,7 +18,6 @@ function parseWords(words) {
 }
 
 function alphabetize(word) {
-  potentialAna = word.indexOf(words);
 
   if (!word) {
     return;
@@ -34,13 +33,14 @@ function alphabetize(word) {
 
 function findAnagram(n) {
 
+  // compare alphebetized words with one another
+
+  // generate two word anagrams
+
 };
 
-// compare alphebetized words with one another
 
-// generate two word anagrams
 
-// compare to list of actual words
 
 
 
