@@ -4,18 +4,33 @@
 
 function parseWords(words) {
   if (!words) {
-    return;
+    return; // if not located in the words var, return what is sent
   }
-  words = words.split(' ');
+  words = words.split(' '); // split the list between each space
 
-  filteredList = words.filter(function (word) {
-    if (word !=='')
-    return true;
-    else return false;
+  filteredList = words.filter(function(word) {
+    if (word !== '')
+      return true;
+    else return false; // filter list to exclude empty spaces
   });
 
-  return filteredList;
+  return filteredList; // return whole list with spaces filtered out
 }
+
+function alphabetize(word) {
+  if (word.indexOf(words))
+
+    word = word.split('');
+  word = word.sort();
+  word = word.join('');
+  return word;
+}
+
+// find anagram
+
+function findAnagram(n) {
+
+};
 
 // compare alphebetized words with one another
 
@@ -23,7 +38,6 @@ function parseWords(words) {
 
 // compare to list of actual words
 
-// turn into list of strings rather than one large string
 
 
 
