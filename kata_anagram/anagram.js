@@ -12,6 +12,10 @@ function alphebetize(word) {
   return word;
 }
 
+// compare alphebetized words with one another
+
+
+
 // compare to list of actual words
 
 const words = [];
